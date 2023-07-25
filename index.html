@@ -8,6 +8,29 @@
       src="https://cdn-cookieyes.com/client_data/1ddd0d5bcae46556f76882c2/script.js"
     ></script>
     <!-- End cookieyes banner -->
+    <script>
+      var checktimeout = 0;
+      window.addEventListener("load", function () {
+        waitForElement(".cky-btn-do-not-sell", function () {
+          var cky_a = document.createElement("a");
+          cky_a.href = "#";
+          cky_a.setAttribute("onclick", "revisitCkyConsent()");
+          cky_a.textContent = "Do Not Sell or Share My Personal Information";
+          cky_footer = document.querySelector(".unique");
+          cky_footer.appendChild(cky_a);
+        });
+      });
+      function waitForElement(selector, callback) {
+        const element = document.querySelector(selector);
+        if (element) return callback();
+        checktimeout++;
+        if (checktimeout < 120) {
+          setTimeout(function () {
+            waitForElement(selector, callback);
+          }, 500);
+        }
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,27 +82,4 @@
       <p>&copy; 2023 My Website. All rights reserved.</p>
     </footer>
   </body>
-  <script>
-    var checktimeout = 0;
-    window.addEventListener("load", function () {
-      waitForElement(".cky-btn-do-not-sell", function () {
-        var cky_a = document.createElement("a");
-        cky_a.href = "#";
-        cky_a.setAttribute("onclick", "revisitCkyConsent()");
-        cky_a.textContent = "Do Not Sell or Share My Personal Information";
-        cky_footer = document.querySelector(".unique");
-        cky_footer.appendChild(cky_a);
-      });
-    });
-    function waitForElement(selector, callback) {
-      const element = document.querySelector(selector);
-      if (element) return callback();
-      checktimeout++;
-      if (checktimeout < 120) {
-        setTimeout(function () {
-          waitForElement(selector, callback);
-        }, 500);
-      }
-    }
-  </script>
 </html>
