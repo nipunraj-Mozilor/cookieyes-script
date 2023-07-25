@@ -52,10 +52,34 @@
     </main>
 
     <footer>
+      <div class="unique"></div>
       <p>Contact us at: example@email.com</p>
       <p>Address: 123 Main Street, City, Country</p>
       <p>Phone: +1 (123) 456-7890</p>
       <p>&copy; 2023 My Website. All rights reserved.</p>
     </footer>
   </body>
+  <script>
+    var checktimeout = 0;
+    window.addEventListener("load", function () {
+      waitForElement(".cky-btn-do-not-sell", function () {
+        var cky_a = document.createElement("a");
+        cky_a.href = "#";
+        cky_a.setAttribute("onclick", "revisitCkyConsent()");
+        cky_a.textContent = "Do Not Sell or Share My Personal Information";
+        cky_footer = document.querySelector(".place_parent_div_class");
+        cky_footer.appendChild(cky_a);
+      });
+    });
+    function waitForElement(selector, callback) {
+      const element = document.querySelector(selector);
+      if (element) return callback();
+      checktimeout++;
+      if (checktimeout < 120) {
+        setTimeout(function () {
+          waitForElement(selector, callback);
+        }, 500);
+      }
+    }
+  </script>
 </html>
