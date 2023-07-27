@@ -13,6 +13,7 @@
       window.addEventListener("load", function () {
         waitForElement(".cky-btn-do-not-sell", function () {
           var cky_div = document.createElement("div");
+          cky_div.className = "button-container";
           cky_div.href = "javascript:void(0)";
           cky_div.setAttribute("onclick", "revisitCkyConsent()");
           cky_div.textContent = "Do Not Sell or Share My Personal Information";
