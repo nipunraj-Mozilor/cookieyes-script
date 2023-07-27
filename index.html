@@ -12,14 +12,18 @@
       var checktimeout = 0;
       window.addEventListener("load", function () {
         waitForElement(".cky-btn-do-not-sell", function () {
+          const footerElements = document.getElementsByTagName("footer");
+          const footer = footerElements[0];
           var cky_div = document.createElement("div");
           cky_div.className = "button-container";
-          cky_div.href = "javascript:void(0)";
-          cky_div.setAttribute("onclick", "revisitCkyConsent()");
-          cky_div.textContent = "Do Not Sell or Share My Personal Information";
-          cky_footer = document.querySelector(".unique");
-          console.log(cky_footer);
-          cky_footer.appendChild(cky_div);
+          var cky_a = document.createElement("a");
+          cky_a.href = "javascript:void(0)";
+          cky_a.setAttribute("onclick", "revisitCkyConsent()");
+          cky_a.textContent = "Do Not Sell or Share My Personal Information";
+          cky_div.appendChild(cky_a);
+          // cky_footer = document.querySelector(".unique");
+          footer.insertAdjacentElement("afterend", cky_div);
+          // cky_footer.appendChild(cky_div);
         });
       });
       function waitForElement(selector, callback) {
