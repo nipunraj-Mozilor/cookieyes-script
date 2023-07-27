@@ -40,6 +40,41 @@
 
     <title>Document</title>
   </head>
+  <style>
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .button-link {
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+      background-color: #1c5061;
+      color: #a9c2eb;
+      padding: 10px;
+      border-radius: 3px;
+      white-space: nowrap;
+      margin: 5px;
+    }
+
+    @media (max-width: 600px) {
+      .button-container {
+        display: flex;
+        justify-content: flex-end; /* changed from center to flex-end */
+        align-items: center;
+      }
+
+      .button-link {
+        font-size: 16px;
+        padding: 5px;
+        border-radius: 2px;
+        margin: 3px;
+      }
+    }
+  </style>
   <body>
     <header>
       <h1>Welcome to My Website</h1>
