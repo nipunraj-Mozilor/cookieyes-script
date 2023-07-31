@@ -6,38 +6,10 @@
       id="cookieyes"
       type="text/javascript"
       src="https://cdn-cookieyes.com/client_data/1ddd0d5bcae46556f76882c2/script.js"
+      async
+      crossorigin="anonymous"
     ></script>
     <!-- End cookieyes banner -->
-    <script>
-      var checktimeout = 0;
-      window.addEventListener("load", function () {
-        waitForElement(".cky-btn-do-not-sell", function () {
-          const footerElements = document.getElementsByTagName("footer");
-          const footer = footerElements[0];
-          var cky_div = document.createElement("div");
-          cky_div.className = "button-container";
-          var cky_a = document.createElement("a");
-          cky_a.className = "button-link";
-          cky_a.href = "javascript:void(0)";
-          cky_a.setAttribute("onclick", "revisitCkyConsent()");
-          cky_a.textContent = "Do Not Sell or Share My Personal Information";
-          cky_div.appendChild(cky_a);
-          // cky_footer = document.querySelector(".unique");
-          footer.insertAdjacentElement("afterend", cky_div);
-          // cky_footer.appendChild(cky_div);
-        });
-      });
-      function waitForElement(selector, callback) {
-        const element = document.querySelector(selector);
-        if (element) return callback();
-        checktimeout++;
-        if (checktimeout < 120) {
-          setTimeout(function () {
-            waitForElement(selector, callback);
-          }, 500);
-        }
-      }
-    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,41 +17,6 @@
 
     <title>Document</title>
   </head>
-  <style>
-    .button-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    .button-link {
-      display: inline-block;
-      text-decoration: none;
-      cursor: pointer;
-      background-color: #1c5061;
-      color: #a9c2eb;
-      padding: 10px;
-      border-radius: 3px;
-      white-space: nowrap;
-      margin: 5px;
-    }
-
-    @media (max-width: 600px) {
-      .button-container {
-        display: flex;
-        justify-content: flex-end; /* changed from center to flex-end */
-        align-items: center;
-      }
-
-      .button-link {
-        font-size: 16px;
-        padding: 5px;
-        border-radius: 2px;
-        margin: 3px;
-      }
-    }
-  </style>
   <body>
     <header>
       <h1>Welcome to My Website</h1>
@@ -117,7 +54,6 @@
     </main>
 
     <footer>
-      <div class="unique"></div>
       <p>Contact us at: example@email.com</p>
       <p>Address: 123 Main Street, City, Country</p>
       <p>Phone: +1 (123) 456-7890</p>
