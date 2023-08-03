@@ -16,14 +16,10 @@
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
         if (element) {
-          element.addEventListener("hello", function (event) {
-            alert(event.detail.name);
+          element.addEventListener("cookieyes_banner_shown", function (event) {
+            console.log("banner appeared");
           });
-          element.dispatchEvent(
-            new CustomEvent("hello", {
-              detail: { name: "John" },
-            })
-          );
+          element.dispatchEvent(new CustomEvent("cookieyes_banner_shown"));
         }
 
         setTimeout(() => {
