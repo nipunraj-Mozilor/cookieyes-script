@@ -21,7 +21,7 @@
 
           element.addEventListener("cookieyes_banner_load", function (event) {
             if (bannerLoaded) return;
-            console.log("display", display);
+            console.log("display", element.currentStyle);
             console.log("banner appeared");
             bannerLoaded = true;
           });
