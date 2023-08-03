@@ -21,10 +21,11 @@
 
           element.addEventListener("cookieyes_banner_load", function (event) {
             if (bannerLoaded) return;
-            console.log(
-              "display",
-              window.getComputedStyle(element, null).getPropertyValue("display")
-            );
+            // console.log(
+            //   "display",
+            //   window.getComputedStyle(element, null).getPropertyValue("display")
+            // );
+            console.log("display", display);
             console.log("banner appeared");
             bannerLoaded = true;
           });
