@@ -12,13 +12,14 @@
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container");
       });
-
+      let bannerLoaded = false;
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
         if (element) {
           element.addEventListener("cookieyes_banner_load", function (event) {
+            if (bannerLoaded) return;
             console.log("banner appeared");
-            event.stopPropagation();
+            bannerLoaded = true;
           });
           element.dispatchEvent(new CustomEvent("cookieyes_banner_load"));
         }
