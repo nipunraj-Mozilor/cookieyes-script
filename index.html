@@ -15,23 +15,18 @@
       let bannerLoaded = false;
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
-
         if (element) {
           const display = getDisplayStyle(element);
-
           element.addEventListener("cookieyes_banner_load", function (event) {
             if (bannerLoaded) return;
-            // console.log(
-            //   "display",
-            //   window.getComputedStyle(element, null).getPropertyValue("display")
-            // );
+            if (display !== "none") {
+              console.log("banner appeared");
+            }
             console.log("display", display);
-            console.log("banner appeared");
             bannerLoaded = true;
           });
           element.dispatchEvent(new CustomEvent("cookieyes_banner_load"));
         }
-
         setTimeout(() => {
           waitForElement(selector, callback);
         }, 200);
