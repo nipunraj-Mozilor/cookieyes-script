@@ -18,6 +18,7 @@
         if (element) {
           element.addEventListener("cookieyes_banner_load", function (event) {
             console.log("banner appeared");
+            event.stopPropagation();
           });
           element.dispatchEvent(
             new CustomEvent("cookieyes_banner_load", { bubbles: false })
