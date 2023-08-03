@@ -16,6 +16,14 @@
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
         if (element) {
+          element.addEventListener("hello", function (event) {
+            alert(event.detail.name);
+          });
+          elem.dispatchEvent(
+            new CustomEvent("hello", {
+              detail: { name: "John" },
+            })
+          );
         }
 
         setTimeout(() => {
