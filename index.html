@@ -32,7 +32,7 @@
       }
       function bannerLoadingEvent(element) {
         const display = getDisplayStyle(element);
-        element.addEventListener("cookieyes_banner_show", function (event) {
+        document.addEventListener("cookieyes_banner_show", function (event) {
           if (bannerLoaded) return;
           if (display !== "none") {
             // perform desired action.
