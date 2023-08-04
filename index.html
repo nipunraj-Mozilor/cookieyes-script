@@ -16,7 +16,7 @@
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
         if (element) {
-          bannerLoadingEvent();
+          bannerLoadingEvent(element);
         }
         setTimeout(() => {
           waitForElement(selector, callback);
@@ -30,7 +30,7 @@
           ? window.getComputedStyle(element, null).getPropertyValue("display")
           : "";
       }
-      function bannerLoadingEvent() {
+      function bannerLoadingEvent(element) {
         const display = getDisplayStyle(element);
         element.addEventListener("cookieyes_banner_show", function (event) {
           if (bannerLoaded) return;
