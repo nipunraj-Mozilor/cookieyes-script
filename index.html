@@ -19,7 +19,6 @@
           const display = getDisplayStyle(element);
           if (bannerLoaded) return;
           if (display !== "none") {
-            // bannerLoadingEvent();
             document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
             bannerLoaded = true;
           }
@@ -36,9 +35,6 @@
           ? window.getComputedStyle(element, null).getPropertyValue("display")
           : "";
       }
-      // function bannerLoadingEvent() {
-
-      // }
     </script>
     <script>
       document.addEventListener("cookieyes_banner_show", function (event) {
