@@ -16,6 +16,10 @@
       function waitForElement(selector) {
         const element = document.querySelector(selector);
         if (element) {
+          const display = getDisplayStyle(element);
+          if (bannerLoaded) return;
+          document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
+
           bannerLoadingEvent(element);
         }
         setTimeout(() => {
@@ -31,16 +35,12 @@
           : "";
       }
       function bannerLoadingEvent(element) {
-        const display = getDisplayStyle(element);
         document.addEventListener("cookieyes_banner_show", function (event) {
-          if (bannerLoaded) return;
           if (display !== "none") {
             // perform desired action.
-            console.log("loaded nipun");
           }
           bannerLoaded = true;
         });
-        document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
       }
     </script>
     <meta charset="UTF-8" />
