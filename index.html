@@ -13,13 +13,13 @@
         waitForElement(".cky-consent-container");
       });
       let bannerLoaded = false;
-      function waitForElement(selector, callback) {
+      function waitForElement(selector) {
         const element = document.querySelector(selector);
         if (element) {
           bannerLoadingEvent(element);
         }
         setTimeout(() => {
-          waitForElement(selector, callback);
+          waitForElement(selector);
         }, 200);
       }
 
