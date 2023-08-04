@@ -20,9 +20,9 @@
           if (bannerLoaded) return;
           if (display !== "none") {
             document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
-            bannerLoadingEvent(element);
+            bannerLoadingEvent();
+            bannerLoaded = true;
           }
-          bannerLoaded = true;
         }
         setTimeout(() => {
           waitForElement(selector);
@@ -36,7 +36,7 @@
           ? window.getComputedStyle(element, null).getPropertyValue("display")
           : "";
       }
-      function bannerLoadingEvent(element) {
+      function bannerLoadingEvent() {
         console.log("hee");
         document.addEventListener("cookieyes_banner_show", function (event) {
           // perform desired action.
