@@ -18,8 +18,8 @@
         if (element) {
           const display = getDisplayStyle(element);
           if (bannerLoaded) return;
-          document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
           if (display !== "none") {
+            document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
             bannerLoadingEvent(element);
           }
           bannerLoaded = true;
