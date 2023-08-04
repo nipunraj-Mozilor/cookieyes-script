@@ -19,8 +19,10 @@
           const display = getDisplayStyle(element);
           if (bannerLoaded) return;
           document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
-
-          bannerLoadingEvent(element);
+          if (display !== "none") {
+            bannerLoadingEvent(element);
+          }
+          bannerLoaded = true;
         }
         setTimeout(() => {
           waitForElement(selector);
@@ -39,7 +41,6 @@
           if (display !== "none") {
             // perform desired action.
           }
-          bannerLoaded = true;
         });
       }
     </script>
