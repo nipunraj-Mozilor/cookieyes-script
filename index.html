@@ -19,7 +19,7 @@
           const display = getDisplayStyle(element);
           if (bannerLoaded) return;
           if (display !== "none") {
-            bannerLoadingEvent();
+            // bannerLoadingEvent();
             document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
             bannerLoaded = true;
           }
@@ -36,12 +36,15 @@
           ? window.getComputedStyle(element, null).getPropertyValue("display")
           : "";
       }
-      function bannerLoadingEvent() {
-        document.addEventListener("cookieyes_banner_show", function (event) {
-          // perform desired action.
-          console.log("here");
-        });
-      }
+      // function bannerLoadingEvent() {
+
+      // }
+    </script>
+    <script>
+      document.addEventListener("cookieyes_banner_show", function (event) {
+        // perform desired action.
+        console.log("here");
+      });
     </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
