@@ -16,16 +16,7 @@
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
         if (element) {
-          const display = getDisplayStyle(element);
-          element.addEventListener("cookieyes_banner_load", function (event) {
-            if (bannerLoaded) return;
-            if (display !== "none") {
-              console.log("banner appeared");
-            }
-            console.log("display", display);
-            bannerLoaded = true;
-          });
-          element.dispatchEvent(new CustomEvent("cookieyes_banner_load"));
+          bannerLoadingEvent();
         }
         setTimeout(() => {
           waitForElement(selector, callback);
@@ -38,6 +29,18 @@
           : window.getComputedStyle
           ? window.getComputedStyle(element, null).getPropertyValue("display")
           : "";
+      }
+      function bannerLoadingEvent() {
+        const display = getDisplayStyle(element);
+        element.addEventListener("cookieyes_banner_show", function (event) {
+          if (bannerLoaded) return;
+          if (display !== "none") {
+            // perform desired action.
+            console.log("loaded nipun");
+          }
+          bannerLoaded = true;
+        });
+        element.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
       }
     </script>
     <meta charset="UTF-8" />
