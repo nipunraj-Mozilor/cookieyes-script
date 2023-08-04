@@ -19,8 +19,8 @@
           const display = getDisplayStyle(element);
           if (bannerLoaded) return;
           if (display !== "none") {
-            document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
             bannerLoadingEvent();
+            document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
             bannerLoaded = true;
           }
         }
