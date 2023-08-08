@@ -23,6 +23,16 @@
           footer.insertAdjacentElement("afterend", cky_div);
         });
       });
+      function waitForElement(selector, callback) {
+        const element = document.querySelector(selector);
+        if (element) return callback();
+        checktimeout++;
+        if (checktimeout < 120) {
+          setTimeout(function () {
+            waitForElement(selector, callback);
+          }, 500);
+        }
+      }
     </script>
     <!-- End cookieyes banner -->
     <meta charset="UTF-8" />
