@@ -11,12 +11,16 @@
       var checktimeout = 0;
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container", function () {
+          const footerElements = document.getElementsByTagName("footer");
+          const footer = footerElements[0];
+          var cky_div = document.createElement("div");
+          cky_div.className = "button-container";
           var cky_a = document.createElement("a");
           cky_a.href = "#";
           cky_a.setAttribute("onclick", "revisitCkyConsent()");
           cky_a.textContent = "Do Not Sell or Share My Personal Information";
-          cky_footer = document.querySelector(".place_parent_div_class");
-          cky_footer.appendChild(cky_a);
+          cky_div.appendChild(cky_a);
+          footer.insertAdjacentElement("afterend", cky_div);
         });
       });
       function waitForElement(selector, callback) {
