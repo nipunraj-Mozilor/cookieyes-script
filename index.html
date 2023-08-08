@@ -28,7 +28,6 @@
         if (element) return callback();
         checktimeout++;
         if (checktimeout < 120) {
-          console.log("in checkoutTime");
           setTimeout(function () {
             waitForElement(selector, callback);
           }, 500);
@@ -36,6 +35,34 @@
       }
     </script>
     <!-- End cookieyes banner -->
+    <script>
+      var checktimeout = 0;
+      window.addEventListener("load", function () {
+        waitForElement(".cky-btn-do-not-sell", function () {
+          const footerElements = document.getElementsByTagName("footer");
+          const footer = footerElements[0];
+          var cky_div = document.createElement("div");
+          cky_div.className = "button-container";
+          var cky_a = document.createElement("a");
+          cky_a.className = "button-link";
+          cky_a.href = "javascript:void(0)";
+          cky_a.setAttribute("onclick", "revisitCkyConsent()");
+          cky_a.textContent = "Do Not Sell or Share My Personal Information";
+          cky_div.appendChild(cky_a);
+          footer.insertAdjacentElement("afterend", cky_div);
+        });
+      });
+      function waitForElement(selector, callback) {
+        const element = document.querySelector(selector);
+        if (element) return callback();
+        checktimeout++;
+        if (checktimeout < 120) {
+          setTimeout(function () {
+            waitForElement(selector, callback);
+          }, 500);
+        }
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
