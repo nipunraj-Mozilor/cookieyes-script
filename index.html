@@ -19,7 +19,9 @@
           cky_a.className = "button-link";
           cky_a.href = "javascript:void(0)";
           cky_a.setAttribute("onclick", "revisitCkyConsent()");
-          cky_a.textContent = "Do Not Sell";
+          if (document.queryselector(".cky-btn-do-not-sell"))
+            cky_a.textContent = "CCPA Button";
+          else cky_a.textContent = "GDPR Text";
           cky_div.appendChild(cky_a);
           footer.insertAdjacentElement("afterend", cky_div);
         });
