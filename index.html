@@ -25,6 +25,7 @@
       });
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
+        console.log("elemnet1", element);
         if (element) return callback();
         checktimeout++;
         if (checktimeout < 120) {
@@ -34,7 +35,6 @@
         }
       }
     </script>
-    <!-- End cookieyes banner -->
     <script>
       var checktimeout = 0;
       window.addEventListener("load", function () {
@@ -54,6 +54,7 @@
       });
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
+        console.log("elemnet2", element);
         if (element) return callback();
         checktimeout++;
         if (checktimeout < 120) {
@@ -62,7 +63,9 @@
           }, 500);
         }
       }
+      //
     </script>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
