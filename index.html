@@ -27,11 +27,12 @@
         });
       });
       function waitForElement(selector, callback) {
-        console.log("first");
         const element = document.querySelector(selector);
+        console.log(element);
         if (element) return callback();
         checktimeout++;
         if (checktimeout < 120) {
+          console.log("in checkoutTime");
           setTimeout(function () {
             waitForElement(selector, callback);
           }, 500);
