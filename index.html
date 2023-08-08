@@ -20,8 +20,8 @@
           cky_a.href = "javascript:void(0)";
           cky_a.setAttribute("onclick", "revisitCkyConsent()");
           if (document.querySelector(".cky-btn-do-not-sell"))
-            cky_a.textContent = "CCPA Button";
-          else cky_a.textContent = "GDPR Text";
+            cky_a.textContent = "Do Not Sell or Share My Personal Information";
+          else cky_a.textContent = "Change Cookie Preferences";
           cky_div.appendChild(cky_a);
           footer.insertAdjacentElement("afterend", cky_div);
         });
