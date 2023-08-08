@@ -10,7 +10,9 @@
     <script>
       var checktimeout = 0;
       window.addEventListener("load", function () {
+        console.log("outside");
         waitForElement(".cky-banner-element", function () {
+          console.log("inside");
           const footerElements = document.getElementsByTagName("footer");
           const footer = footerElements[0];
           console.log(footer);
