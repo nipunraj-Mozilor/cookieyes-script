@@ -10,12 +10,9 @@
     <script>
       var checktimeout = 0;
       window.addEventListener("load", function () {
-        console.log("outside");
         waitForElement(".cky-consent-container", function () {
-          console.log("inside");
           const footerElements = document.getElementsByTagName("footer");
           const footer = footerElements[0];
-          console.log(footer);
           var cky_div = document.createElement("div");
           cky_div.className = "button-container";
           var cky_a = document.createElement("a");
@@ -28,7 +25,6 @@
       });
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
-        console.log(element);
         if (element) return callback();
         checktimeout++;
         if (checktimeout < 120) {
