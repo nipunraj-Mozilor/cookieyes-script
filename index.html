@@ -9,8 +9,8 @@
     ></script>
     <!-- custom script -->
     <script>
-      function getCookie(name) {
-        let cookies = document.cookie
+      function getCookie(key) {
+        const cookies = document.cookie
           .split(";")
           .reduce(
             (ac, cv, i) =>
@@ -18,7 +18,7 @@
             {}
           )["cookieyes-consent"];
 
-        var { [name]: value } = cookies
+        const { [key]: value } = cookies
           .split(",")
           .reduce(
             (obj, pair) => (
@@ -26,12 +26,15 @@
             ),
             {}
           );
-        return value;
+        return key;
       }
 
       if (getCookie("consent") == "yes" && getCookie("analytics") == "yes") {
         const script = document.createElement("script");
-        script.setAttribute("src", "<URL of your script>");
+        script.setAttribute(
+          "src",
+          "https://www.googletagmanager.com/gtag/js?id=G-W5JKKJHZDH"
+        );
         document.body.appendChild(script);
       }
     </script>
