@@ -10,7 +10,7 @@
     <!-- End cookieyes banner -->
     <!-- custom script -->
     <script src="hotjar.com"></script>
-    <!-- <script>
+    <script>
       function getCookie(key) {
         const cookies = document.cookie
           .split(";")
@@ -33,13 +33,10 @@
 
       if (getCookie("consent") == "yes" && getCookie("analytics") == "yes") {
         const script = document.createElement("script");
-        script.setAttribute(
-          "src",
-          "https://www.googletagmanager.com/gtag/js?id=G-W5JKKJHZDH"
-        );
+        script.setAttribute("src", "hotjar.com");
         document.body.appendChild(script);
       }
-    </script> -->
+    </script>
     <!-- Google analytics -->
     <script async data-cookieyes="analytics" src="hotjar.com"></script>
     <script>
