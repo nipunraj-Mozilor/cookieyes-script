@@ -1,16 +1,31 @@
 @font-face {
-  font-family: "LilitaOne";
-  src: url("./font/LilitaOne-Regular.woff2") format("woff2"),
-    url("./font/LilitaOne-Regular.woff2");
-  font-weight: 400;
-  font-style: regular;
+  font-family: "mathlete";
+  src: url("./font/Mathlete-Bulky-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mathlete";
+  src: url("./font/Mathlete-BulkySlant-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mathlete";
+  src: url("./font/Mathlete-Skinny-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mathlete";
+  src: url("./font/Mathlete-SkinnySlant-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-  font-weight: 400;
-  font-style: regular;
-  font-family: "LilitaOne" !important;
-  color: red;
+  font-family: "mathlete";
 }
 
 header {
