@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "LilitaOne";
+  src: url("./font/LilitaOne-Regular.ttf") format("woff2"),
+    url("./font/LilitaOne-Regular.ttf");
+  font-weight: 400;
+  font-style: regular;
+}
+
+body {
+  font-weight: 400;
+  font-style: regular;
+  font-family: "LilitaOne";
+}
+
 header {
   background-color: #333;
   color: #fff;
