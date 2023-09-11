@@ -1,7 +1,7 @@
 @font-face {
   font-family: "LilitaOne";
-  src: url("./font/LilitaOne-Regular.ttf") format("woff2"),
-    url("./font/LilitaOne-Regular.ttf");
+  src: url("./font/LilitaOne-Regular.woff2") format("woff2"),
+    url("./font/LilitaOne-Regular.woff2");
   font-weight: 400;
   font-style: regular;
 }
