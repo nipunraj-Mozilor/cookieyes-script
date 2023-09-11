@@ -24,8 +24,10 @@
   font-style: normal;
 }
 
-body {
+h2 {
   font-family: "mathlete";
+  color: red;
+  font-weight: 700;
 }
 
 header {
