@@ -5,7 +5,7 @@
     url(./font/roboto-black-webfont.woff) format("woff");
 }
 
-body {
+h1 {
   font-family: "Roboto";
   font-size: 1.25rem;
   line-height: 1.5;
