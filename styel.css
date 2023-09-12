@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url(./font/roboto-black-webfont.woff2) format("woff2"),
+    url(./font/roboto-black-webfont.woff) format("woff");
+}
+
+body {
+  font-family: "Roboto";
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
 header {
   background-color: #333;
   color: #fff;
