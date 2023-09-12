@@ -1,35 +1,3 @@
-@font-face {
-  font-family: "mathlete";
-  src: url("./font/Mathlete-Bulky-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "mathlete";
-  src: url("./font/Mathlete-BulkySlant-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "mathlete";
-  src: url("./font/Mathlete-Skinny-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "mathlete";
-  src: url("./font/Mathlete-SkinnySlant-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-h2 {
-  font-family: "mathlete";
-  color: red;
-  font-weight: 700;
-}
-
 header {
   background-color: #333;
   color: #fff;
