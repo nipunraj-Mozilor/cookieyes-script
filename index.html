@@ -20,7 +20,9 @@
           const btnClose = document.querySelector(".cky-banner-btn-close");
           if (bannerLoaded) return;
           btnClose.addEventListener("click", function () {
-            document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
+            document.dispatchEvent(
+              new CustomEvent("cookieyes_btn-close_click")
+            );
             bannerLoaded = true;
           });
         }
@@ -30,7 +32,7 @@
       }
     </script>
     <script>
-      document.addEventListener("cookieyes_banner_show", function (event) {
+      document.addEventListener("cookieyes_btn-close_click", function (event) {
         console.log("clicked");
         // perform desired action.
       });
