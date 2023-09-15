@@ -11,19 +11,16 @@
     <!-- custom event -->
     <script>
       window.addEventListener("load", function () {
-        waitForElement(".cky-banner-btn-closer");
+        waitForElement(".cky-consent-container");
       });
       let bannerLoaded = false;
       function waitForElement(selector) {
         const element = document.querySelector(selector);
-        console.log("element outside", element);
         if (element) {
-          console.log("element", element);
-          // const btnClose = document.querySelector(".cky-banner-btn-close");
-          // console.log(btnClose);
-          const display = getDisplayStyle(element);
+          const btnClose = document.querySelector(".cky-banner-btn-close");
           if (bannerLoaded) return;
-          if (display !== "none") {
+          if (btnClose) {
+            btnClose.click();
             document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
             bannerLoaded = true;
           }
