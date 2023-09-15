@@ -8,6 +8,35 @@
       src="https://cdn-cookieyes.com/client_data/6b0c41814a684487155473aa/script.js"
     ></script>
     <!-- End cookieyes banner -->
+    <!-- custom event -->
+    <script>
+      window.addEventListener("load", function () {
+        waitForElement(".cky-consent-container");
+      });
+      let bannerLoaded = false;
+      function waitForElement(selector) {
+        const element = document.querySelector(selector);
+        if (element) {
+          console.log(element);
+          const display = getDisplayStyle(element);
+          if (bannerLoaded) return;
+          if (display !== "none") {
+            document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
+            bannerLoaded = true;
+          }
+        }
+        setTimeout(() => {
+          waitForElement(selector);
+        }, 200);
+      }
+    </script>
+    <script>
+      document.addEventListener("cookieyes_banner_show", function (event) {
+        // perform desired action.
+      });
+    </script>
+
+    <!--  -->
     <!-- Google analytics -->
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -28,7 +57,7 @@
     <header>
       <h1>Welcome to My Website</h1>
       <h2>Cookie list</h2>
-      <div class="cky-audit-table-element"></div>
+      <!-- <div class="cky-audit-table-element"></div> -->
       <nav>
         <a href="#">Home</a>
         <a href="#">About</a>
