@@ -19,11 +19,10 @@
         if (element) {
           const btnClose = document.querySelector(".cky-banner-btn-close");
           if (bannerLoaded) return;
-          if (btnClose) {
-            btnClose.click();
+          btnClose.addEventListener("click", function () {
             document.dispatchEvent(new CustomEvent("cookieyes_banner_show"));
             bannerLoaded = true;
-          }
+          });
         }
         setTimeout(() => {
           waitForElement(selector);
