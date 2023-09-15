@@ -11,15 +11,15 @@
     <!-- custom event -->
     <script>
       window.addEventListener("load", function () {
-        waitForElement(".cky-consent-container");
+        waitForElement(".cky-banner-btn-closer");
       });
       let bannerLoaded = false;
       function waitForElement(selector) {
         const element = document.querySelector(selector);
         if (element) {
           console.log(element);
-          const btnClose = document.querySelector(".cky-banner-btn-close");
-          console.log(btnClose);
+          // const btnClose = document.querySelector(".cky-banner-btn-close");
+          // console.log(btnClose);
           const display = getDisplayStyle(element);
           if (bannerLoaded) return;
           if (display !== "none") {
