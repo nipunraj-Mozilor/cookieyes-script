@@ -25,10 +25,11 @@
             );
             bannerLoaded = true;
           });
+        } else {
+          setTimeout(() => {
+            waitForElement(selector);
+          }, 200);
         }
-        setTimeout(() => {
-          waitForElement(selector);
-        }, 200);
       }
     </script>
     <script>
