@@ -16,8 +16,9 @@
       let bannerLoaded = false;
       function waitForElement(selector) {
         const element = document.querySelector(selector);
+        console.log("element outside", element);
         if (element) {
-          console.log(element);
+          console.log("element", element);
           // const btnClose = document.querySelector(".cky-banner-btn-close");
           // console.log(btnClose);
           const display = getDisplayStyle(element);
