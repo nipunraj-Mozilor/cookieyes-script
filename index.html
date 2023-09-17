@@ -8,37 +8,6 @@
       src="https://cdn-cookieyes.com/client_data/6b0c41814a684487155473aa/script.js"
     ></script>
     <!-- End cookieyes banner -->
-    <!-- custom event -->
-    <script>
-      window.addEventListener("load", function () {
-        waitForElement(".cky-consent-container");
-      });
-      let bannerLoaded = false;
-      function waitForElement(selector) {
-        const element = document.querySelector(selector);
-        if (element) {
-          if (bannerLoaded) return;
-          const btnClose = document.querySelector(".cky-banner-btn-close");
-          btnClose.addEventListener("click", function () {
-            document.dispatchEvent(
-              new CustomEvent("cookieyes_btn-close_click")
-            );
-            bannerLoaded = true;
-          });
-        } else {
-          setTimeout(() => {
-            waitForElement(selector);
-          }, 200);
-        }
-      }
-    </script>
-    <script>
-      document.addEventListener("cookieyes_btn-close_click", function (event) {
-        console.log("clicked");
-        // perform desired action.
-      });
-    </script>
-
     <!--  -->
     <!-- Google analytics -->
     <script>
