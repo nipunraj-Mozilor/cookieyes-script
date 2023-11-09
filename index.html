@@ -49,10 +49,12 @@
       function addScript() {
         const onsiteTracking = document.createElement("script");
         onsiteTracking.type = "text/javascript";
+        onsiteTracking.async = true;
         onsiteTracking.src = "https://trk.herofil.es/onsite/onsite.js";
-        onsiteTracking.onload = function () {
+        function onScriptLoad() {
           onsite("create", "RH-390-398-478");
-        };
+        }
+        onsiteTracking.addEventListener('load', onScriptLoad);
         document.head.appendChild(onsiteTracking);
       }
     </script>
