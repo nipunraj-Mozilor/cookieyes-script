@@ -49,12 +49,12 @@
       function addScript() {
         const onsiteTracking = document.createElement("script");
         onsiteTracking.type = "text/javascript";
-        onsiteTracking.async = true;
-        onsiteTracking.src = "https://trk.herofil.es/onsite/onsite.js";
-        function onScriptLoad() {
-          onsite("create", "RH-390-398-478");
-        }
-        onsiteTracking.addEventListener('load', onScriptLoad);
+        onsiteTracking.innerHTML = `(function(o,n,s,i,t,e){o['OnSiteObject']=s;o[s]=o[s]||function(h){(
+                                    o[s].q=o[s].q||[]).push(arguments)};t=n.createElement('script');t.async=true;
+                                    t.src=i;e=n.getElementsByTagName('script')[0];e.parentNode.insertBefore(t,e)
+                                    })(window, document, 'onsite', 'https://trk.herofil.es/onsite/onsite.js');
+                                    
+                                    onsite('create', 'RH-390-398-478');`
         document.head.appendChild(onsiteTracking);
       }
     </script>
