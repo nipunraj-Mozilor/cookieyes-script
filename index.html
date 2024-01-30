@@ -55,9 +55,8 @@
           var doNotSellButton = document.querySelector(".cky-btn-do-not-sell");
           if (doNotSellButton) {
             var newButton = doNotSellButton.cloneNode(true);
-            console.log("new", newButton);
+            newButton.innerText = "New Button Text";
             doNotSellButton.replaceWith(newButton);
-            console.log("second", doNotSellButton);
             newButton.onclick = function () {
               performBannerAction("reject");
             };
