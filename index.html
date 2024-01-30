@@ -52,12 +52,14 @@
       var checktimeout = 0;
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container", function () {
+          const noticeGroup = document.querySelector(".cky-notice-group");
           const acceptAllButton = document.createElement("button");
           acceptAllButton.innerText = "Accept all";
           acceptAllButton.onclick = function () {
             const closeAction = document.querySelector(".cky-banner-btn-close");
             doNotSellButton.click();
           };
+          noticeGroup.appendChild(acceptAllButton);
         });
       });
       function waitForElement(selector, callback) {
