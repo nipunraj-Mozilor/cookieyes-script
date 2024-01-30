@@ -52,15 +52,12 @@
       var checktimeout = 0;
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container", function () {
-          var doNotSellButton = document.querySelector(".cky-btn-do-not-sell");
-          if (doNotSellButton) {
-            var newButton = doNotSellButton.cloneNode(true);
-            newButton.innerText = "New Button Text";
-            doNotSellButton.replaceWith(newButton);
-            newButton.onclick = function () {
-              performBannerAction("reject");
-            };
-          }
+          const acceptAllButton = document.createElement("button");
+          acceptAllButton.innerText = "Accept all";
+          acceptAllButton.onclick = function () {
+            const closeAction = document.querySelector(".cky-banner-btn-close");
+            doNotSellButton.click();
+          };
         });
       });
       function waitForElement(selector, callback) {
