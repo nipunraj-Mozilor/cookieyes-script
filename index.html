@@ -57,7 +57,7 @@
             var newButton = doNotSellButton.cloneNode(true);
             console.log("new", newButton);
             doNotSellButton.replaceWith(newButton);
-            console.log("second");
+            console.log("second", doNotSellButton);
             newButton.onclick = function () {
               performBannerAction("reject");
             };
