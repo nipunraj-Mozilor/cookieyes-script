@@ -55,11 +55,9 @@
           var doNotSellButton = document.querySelector(".cky-btn-do-not-sell");
           if (doNotSellButton) {
             var newButton = doNotSellButton.cloneNode(true);
+            console.log("new", newButton);
             doNotSellButton.replaceWith(newButton);
             newButton.onclick = function () {
-              const ccpaOptout = document.getElementById("ckyCCPAOptOut");
-              ccpaOptout.checked = true;
-              ccpaOptout.style.backgroundColor = "#1863dc";
               performBannerAction("reject");
             };
           }
