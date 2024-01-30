@@ -54,9 +54,7 @@
         waitForElement(".cky-consent-container", function () {
           const noticeGroup = document.querySelector(".cky-notice-group");
           const acceptAllButton = document.createElement("button");
-          var doNotSellButton = document.querySelector(".cky-btn-do-not-sell");
 
-          doNotSellButton.innerText = "New Button Name";
           acceptAllButton.innerText = "Accept all";
           acceptAllButton.classList.add("cky-btn", "cky-btn-reject");
           acceptAllButton.onclick = function () {
