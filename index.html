@@ -54,16 +54,19 @@
         waitForElement(".cky-consent-container", function () {
           const btnWrapper = document.querySelector(".cky-notice-btn-wrapper");
           const acceptAllButton = document.createElement("button");
-          const anchor = document.querySelector(".cky-btn-do-not-sell");
           const closBtn = document.querySelector(".cky-banner-btn-close");
 
-          closBtn.style.display = "none";
-          acceptAllButton.innerText = "Accept all";
-          acceptAllButton.classList.add("cky-btn", "cky-btn-reject");
-          acceptAllButton.onclick = function () {
-            const closeAction = document.querySelector(".cky-banner-btn-close");
-            closeAction.click();
-          };
+          closBtn ? (closBtn.style.display = "none") : null;
+          if (acceptAllButton) {
+            acceptAllButton.innerText = "Accept all";
+            acceptAllButton.classList.add("cky-btn", "cky-btn-reject");
+            acceptAllButton.onclick = function () {
+              const closeAction = document.querySelector(
+                ".cky-banner-btn-close"
+              );
+              closeAction.click();
+            };
+          }
           btnWrapper.appendChild(acceptAllButton);
         });
       });
