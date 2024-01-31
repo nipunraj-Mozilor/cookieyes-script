@@ -54,18 +54,9 @@
         waitForElement(".cky-consent-container", function () {
           const noticeGroup = document.querySelector(".cky-notice-group");
           const acceptAllButton = document.createElement("button");
-          var doNotSellButton = document.querySelector(".cky-btn-do-not-sell");
+          const anchor = document.querySelector(".cky-btn-do-not-sell");
 
-          if (doNotSellButton) {
-            var newButton = doNotSellButton.cloneNode(true);
-            doNotSellButton.replaceWith(newButton);
-            newButton.onclick = function () {
-              const ccpaOptout = document.getElementById("ckyCCPAOptOut");
-              ccpaOptout.checked = true;
-              ccpaOptout.style.backgroundColor = "#1863dc";
-              performBannerAction("reject");
-            };
-          }
+          anchor.innerText = "fsdf";
 
           acceptAllButton.innerText = "Accept all";
           acceptAllButton.classList.add("cky-btn", "cky-btn-reject");
