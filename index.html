@@ -56,6 +56,16 @@
           const acceptAllButton = document.createElement("button");
           const closBtn = document.querySelector(".cky-banner-btn-close");
 
+          if (btnWrapper) {
+            const doNotSellButton = wrapper.querySelector(
+              ".cky-btn-do-not-sell"
+            );
+
+            doNotSellButton.style.padding = "8px 27px";
+            doNotSellButton.style.border = "2px solid #1863dc";
+            doNotSellButton.style.marginRight = "14px";
+          }
+
           closBtn ? (closBtn.style.display = "none") : null;
           if (acceptAllButton) {
             acceptAllButton.innerText = "Accept all";
@@ -70,6 +80,7 @@
           btnWrapper.appendChild(acceptAllButton);
         });
       });
+
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
         if (element) return callback();
