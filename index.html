@@ -55,7 +55,9 @@
           const btnWrapper = document.querySelector(".cky-notice-btn-wrapper");
           const acceptAllButton = document.createElement("button");
           const anchor = document.querySelector(".cky-btn-do-not-sell");
+          const closBtn = document.querySelector(".cky-banner-btn-close");
 
+          closBtn.style.display = "none";
           acceptAllButton.innerText = "Accept all";
           acceptAllButton.classList.add("cky-btn", "cky-btn-reject");
           acceptAllButton.onclick = function () {
@@ -76,8 +78,6 @@
         }
       }
     </script>
-
-    <!--  -->
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
