@@ -2,21 +2,7 @@
 <html lang="arj_bs">
   <head>
     <!-- Google Tag Manager -->
-    <!-- <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-WWBB26M");
-    </script> -->
-    <!-- End Google Tag Manager -->
-    <!-- Google Tag Manager -->
-    <!-- <script>
+    <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -27,7 +13,8 @@
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-NNP5WJ6");
-    </script> -->
+    </script>
+    -->
     <!-- End Google Tag Manager -->
     <!-- Google analytics -->
     <!-- <script>
@@ -44,53 +31,9 @@
     <script
       id="cookieyes"
       type="text/javascript"
-      src="https://cdn-cookieyes.com/client_data/9509006eeaaa180966868be7/script.js"
+      src="https://cdn-cookieyes.com/client_data/4b1a99f2989f93381765e19a/script.js"
     ></script>
     <!-- End cookieyes banner -->
-    <!-- custom -->
-    <script>
-      var checktimeout = 0;
-      window.addEventListener("load", function () {
-        waitForElement(".cky-consent-container", function () {
-          const btnWrapper = document.querySelector(".cky-notice-btn-wrapper");
-          const acceptAllButton = document.createElement("button");
-          const closBtn = document.querySelector(".cky-banner-btn-close");
-
-          if (btnWrapper) {
-            const doNotSellButton = btnWrapper.querySelector(
-              ".cky-btn-do-not-sell"
-            );
-            doNotSellButton.style.padding = "8px 27px";
-            doNotSellButton.style.border = "2px solid #1863dc";
-            doNotSellButton.style.marginRight = "14px";
-          }
-          closBtn ? (closBtn.style.display = "none") : null;
-          if (acceptAllButton) {
-            acceptAllButton.innerText = "Accept all";
-            acceptAllButton.classList.add("cky-btn", "cky-btn-reject");
-            acceptAllButton.onclick = function () {
-              const closeAction = document.querySelector(
-                ".cky-banner-btn-close"
-              );
-              closeAction.click();
-            };
-          }
-          btnWrapper.appendChild(acceptAllButton);
-        });
-      });
-
-      function waitForElement(selector, callback) {
-        const element = document.querySelector(selector);
-        if (element) return callback();
-        checktimeout++;
-        if (checktimeout < 120) {
-          setTimeout(function () {
-            waitForElement(selector, callback);
-          }, 500);
-        }
-      }
-    </script>
-
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -99,14 +42,14 @@
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript
+    <noscript
       ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-WWBB26M"
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NNP5WJ6"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
       ></iframe
-    ></noscript> -->
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header>
       <h1>Welcome to My Website</h1>
