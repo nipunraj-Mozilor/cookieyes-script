@@ -29,6 +29,7 @@
       });
 
       function waitForElement(selector, callback) {
+        console.log("res");
         const element = document.querySelector(selector);
         if (element) return callback();
         checktimeout++;
