@@ -12,17 +12,15 @@
     <script>
       var checktimeout = 0;
       window.addEventListener("load", function () {
-        console.log("fsd");
         waitForElement(".cky-consent-container", function () {
-          console.log("lfsadfas");
           var customizeButton = document.querySelector(
             ".cky-btn, .cky-btn-customize"
           );
-
           if (customizeButton) {
-            console.log("fisrt");
             customizeButton.onclick = function () {
-              console.log("here");
+              setTimeout(function () {
+                performBannerAction("accept_partial");
+              }, 9000);
             };
           }
         });
