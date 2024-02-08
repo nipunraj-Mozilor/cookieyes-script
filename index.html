@@ -13,9 +13,11 @@
       var checktimeout = 0;
       window.addEventListener("load", function () {
         waitForElement("cky-consent-container", function () {
+          console.log("lfsadfas");
           var customizeButton = document.querySelector(
             ".cky-btn, .cky-btn-customize"
           );
+
           if (customizeButton) {
             console.log("fisrt");
             customizeButton.onclick = function () {
