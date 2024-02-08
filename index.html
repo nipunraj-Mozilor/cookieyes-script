@@ -13,7 +13,7 @@
       var checktimeout = 0;
       window.addEventListener("load", function () {
         console.log("fsd");
-        waitForElement("cky-consent-container", function () {
+        waitForElement(".cky-consent-container", function () {
           console.log("lfsadfas");
           var customizeButton = document.querySelector(
             ".cky-btn, .cky-btn-customize"
@@ -29,7 +29,6 @@
       });
 
       function waitForElement(selector, callback) {
-        console.log("res");
         const element = document.querySelector(selector);
         if (element) return callback();
         checktimeout++;
