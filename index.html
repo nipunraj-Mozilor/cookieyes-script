@@ -5,11 +5,56 @@
     <script
       id="cookieyes"
       type="text/javascript"
-      src="https://cdn-cookieyes.com/client_data/4b1a99f2989f93381765e19a/script.js"
+      src="https://cdn-cookieyes.com/client_data/9509006eeaaa180966868be7/script.js"
     ></script>
     <!-- End cookieyes banner -->
     <!-- custom script -->
     <script>
+      var checktimeout = 0;
+      window.addEventListener("load", function () {
+        waitForElement(".cky-consent-container", function () {
+          const btnWrapper = document.querySelector(".cky-notice-btn-wrapper");
+          const acceptAllButton = document.createElement("button");
+          const closBtn = document.querySelector(".cky-banner-btn-close");
+
+          if (btnWrapper) {
+            const doNotSellButton = btnWrapper.querySelector(
+              ".cky-btn-do-not-sell"
+            );
+            doNotSellButton.style.padding = "8px 27px";
+            doNotSellButton.style.border = "2px solid #1863dc";
+            doNotSellButton.style.marginRight = "14px";
+          }
+          closBtn ? (closBtn.style.display = "none") : null;
+          if (acceptAllButton) {
+            acceptAllButton.innerText = "Accept all";
+            acceptAllButton.classList.add("cky-btn", "cky-btn-reject");
+            acceptAllButton.onclick = function () {
+              const closeAction = document.querySelector(
+                ".cky-banner-btn-close"
+              );
+              closeAction.click();
+            };
+          }
+          btnWrapper.appendChild(acceptAllButton);
+        });
+      });
+
+      function waitForElement(selector, callback) {
+        const element = document.querySelector(selector);
+        if (element) return callback();
+        checktimeout++;
+        if (checktimeout < 120) {
+          setTimeout(function () {
+            waitForElement(selector, callback);
+          }, 500);
+        }
+      }
+    </script>
+
+    <!-- custom script -->
+    <!-- custom script 2 -->
+    <!-- <script>
       var checktimeout = 0;
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container", function () {
@@ -20,7 +65,7 @@
             customizeButton.onclick = function () {
               setTimeout(function () {
                 performBannerAction("accept_partial");
-              }, 9000); //adjust your time accordingly
+              }, 60000); //adjust your time accordingly
             };
           }
         });
@@ -36,8 +81,8 @@
           }, 500);
         }
       }
-    </script>
-    <!-- custom script ends -->
+    </script> -->
+    <!-- custom script 2 ends -->
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
