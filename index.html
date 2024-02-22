@@ -40,8 +40,10 @@
       });
 
       function waitForElement(selector, callback) {
+        console.log("ere waitForElement");
         const element = document.querySelector(selector);
         if (element) {
+          console.log("here");
           console.log("style", element.style);
           element.style.visibility = "hidden";
           return callback();
