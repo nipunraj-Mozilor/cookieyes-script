@@ -25,11 +25,12 @@
             .then((res) => res.json())
             .then((data) => {
               regionCode = data.region_code;
-              // if (regionCode !== "CA") {
-              const varr = document.querySelector(".cky-consent-container");
-              // varr.style.visibility = "hidden";
-              // console.log("nipun", style.visibility === "hidden");
-              // }
+              if (regionCode !== "CA") {
+                const container = document.querySelector(
+                  ".cky-consent-container"
+                );
+                container.style.visibility = "hidden";
+              }
             });
         });
       });
@@ -189,6 +190,11 @@
         </script> -->
       </div>
       <p>Contact us at: example@email.com</p>
+      <p>
+        <a href="javascript:void(0)" onclick="revisitCkyConsent()"
+          >Do Not Sell or Share My Personal Information</a
+        >
+      </p>
       <p>Address: 123 Main Street, City, Country</p>
       <p>Phone: +1 (123) 456-7890</p>
       <p>&copy; 2023 My Website. All rights reserved.</p>
