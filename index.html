@@ -26,9 +26,9 @@
           //   .then((data) => {
           //     regionCode = data.region_code;
           //     console.log("regionCode", regionCode);
-          if (regionCode !== "CA") {
+          if (regionCode === "CA") {
             const container = document.querySelector(".cky-consent-container");
-            container.style.visibility = "hidden";
+            container.style.visibility = "visible";
           }
           //   });
         });
