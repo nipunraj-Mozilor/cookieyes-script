@@ -21,19 +21,16 @@
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container", function () {
           let regionCode;
-          // const container = document.querySelector(".cky-consent-container");
-          // container.style.visibility = "hidden";
           fetch("https://directory.cookieyes.com/api/v1/ip")
             .then((res) => res.json())
             .then((data) => {
               regionCode = data.region_code;
               console.log("regionCode", regionCode);
-              if (regionCode === "CA") {
+              if (regionCode !== "CA") {
                 const container = document.querySelector(
                   ".cky-consent-container"
                 );
-                // performBannerAction("Accept");
-                container.style.visibility = "display";
+                container.style.visibility = "hidden";
               }
             });
         });
@@ -42,15 +39,10 @@
       function waitForElement(selector, callback) {
         console.log("ere waitForElement");
         const element = document.querySelector(selector);
-        if (element) {
-          console.log("here");
-          console.log("style", element.style);
-          element.style.visibility = "hidden";
-          return callback();
-        }
+        if (element) return callback();
+
         checktimeout++;
         if (checktimeout < 120) {
-          console.log("in checkout ");
           setTimeout(function () {
             waitForElement(selector, callback);
           }, 500);
