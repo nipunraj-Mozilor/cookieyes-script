@@ -20,24 +20,23 @@
       var checktimeout = 0;
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container", function () {
-          let regionCode;
-          fetch("https://directory.cookieyes.com/api/v1/ip")
-            .then((res) => res.json())
-            .then((data) => {
-              regionCode = data.region_code;
-              console.log("regionCode", regionCode);
-              if (regionCode !== "CA") {
-                const container = document.querySelector(
-                  ".cky-consent-container"
-                );
-                container.style.visibility = "hidden";
-              }
-            });
+          let regionCode = window.cookieyes._ckyStore._ruleData._regionCode;
+          console.log("regionCode", regionCode);
+
+          // fetch("https://directory.cookieyes.com/api/v1/ip")
+          //   .then((res) => res.json())
+          //   .then((data) => {
+          //     regionCode = data.region_code;
+          //     console.log("regionCode", regionCode);
+          if (regionCode !== "CA") {
+            const container = document.querySelector(".cky-consent-container");
+            container.style.visibility = "hidden";
+          }
+          //   });
         });
       });
 
       function waitForElement(selector, callback) {
-        console.log("ere waitForElement");
         const element = document.querySelector(selector);
         if (element) return callback();
 
