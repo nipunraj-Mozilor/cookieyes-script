@@ -50,6 +50,7 @@
         }
         checktimeout++;
         if (checktimeout < 120) {
+          console.log("in checkout ");
           setTimeout(function () {
             waitForElement(selector, callback);
           }, 500);
