@@ -41,7 +41,7 @@
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
         if (element) {
-          element.style.visibility = "display";
+          element.style.visibility = "hidden";
           return callback();
         }
         checktimeout++;
