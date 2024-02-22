@@ -21,16 +21,18 @@
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container", function () {
           let regionCode;
+          const container = document.querySelector(".cky-consent-container");
+          container.style.visibility = "hidden";
           fetch("https://directory.cookieyes.com/api/v1/ip")
             .then((res) => res.json())
             .then((data) => {
               regionCode = data.region_code;
-              if (regionCode !== "CA") {
+              if (regionCode === "CA") {
                 const container = document.querySelector(
                   ".cky-consent-container"
                 );
-                performBannerAction("Accept");
-                // container.style.visibility = "hidden";
+                // performBannerAction("Accept");
+                container.style.visibility = "display";
               }
             });
         });
