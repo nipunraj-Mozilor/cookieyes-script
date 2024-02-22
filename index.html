@@ -20,11 +20,10 @@
       var checktimeout = 0;
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container", function () {
-          console.log("here");
           fetch("https://directory.cookieyes.com/api/v1/ip")
             .then((res) => res.json())
             .then((data) => {
-              console.log("data", data);
+              console.log("data", data.region_code);
             });
         });
       });
