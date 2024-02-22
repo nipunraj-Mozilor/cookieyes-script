@@ -25,10 +25,10 @@
             .then((res) => res.json())
             .then((data) => {
               regionCode = data.region_code;
-              if (regionCode !== "CA") {
-                const varr = document.querySelector(".cky-consent-container");
-                console.log("nipun", varr.style.display);
-              }
+              // if (regionCode !== "CA") {
+              const varr = document.querySelector(".cky-consent-container");
+              console.log("nipun", varr.style.display);
+              // }
             });
         });
       });
