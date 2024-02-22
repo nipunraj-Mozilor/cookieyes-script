@@ -21,8 +21,8 @@
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container", function () {
           let regionCode;
-          const container = document.querySelector(".cky-consent-container");
-          container.style.visibility = "hidden";
+          // const container = document.querySelector(".cky-consent-container");
+          // container.style.visibility = "hidden";
           fetch("https://directory.cookieyes.com/api/v1/ip")
             .then((res) => res.json())
             .then((data) => {
@@ -40,8 +40,10 @@
 
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
-        console.log("element", element);
-        if (element) return callback();
+        if (element) {
+          element.style.visibility = "display";
+          return callback();
+        }
         checktimeout++;
         if (checktimeout < 120) {
           setTimeout(function () {
