@@ -27,6 +27,7 @@
             .then((res) => res.json())
             .then((data) => {
               regionCode = data.region_code;
+              console.log("regionCode", regionCode);
               if (regionCode === "CA") {
                 const container = document.querySelector(
                   ".cky-consent-container"
