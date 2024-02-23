@@ -26,10 +26,11 @@
           //   .then((data) => {
           //     regionCode = data.region_code;
           //     console.log("regionCode", regionCode);
+          console.log(regionCode);
           if (regionCode === "CA") {
             const container = document.querySelector(".cky-consent-container");
-            console.log("container", container.style.visibility);
-            container.style.visibility = "visible";
+            console.log("container", container.classList);
+            // container.style.visibility = "visible";
           }
           //   });
         });
