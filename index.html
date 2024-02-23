@@ -21,7 +21,6 @@
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container", function () {
           let regionCode = window.cookieyes._ckyStore._ruleData._regionCode;
-          console.log(regionCode);
           if (regionCode !== "CA") {
             const container = document.querySelector(".cky-consent-container");
             container.style.visibility = "hidden";
