@@ -29,21 +29,14 @@
           console.log(regionCode);
           if (regionCode !== "CA") {
             const container = document.querySelector(".cky-consent-container");
-            const child = document.querySelector(".cky-consent-bar");
-            console.log("child", child);
-            console.log("container name", container);
-            console.log("container", container.classList);
-            // container.classList.add("cky-hide");
-            // container.style.visibility = "visible";
+            container.style.visibility = "hidden";
           }
-          //   });
         });
       });
 
       function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
         if (element) return callback();
-
         checktimeout++;
         if (checktimeout < 120) {
           setTimeout(function () {
