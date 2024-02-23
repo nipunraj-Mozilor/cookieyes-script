@@ -27,11 +27,12 @@
           //     regionCode = data.region_code;
           //     console.log("regionCode", regionCode);
           console.log(regionCode);
-          if (regionCode === "CA") {
+          if (regionCode !== "CA") {
             const container = document.querySelector(".cky-consent-container");
+            console.log("container name", container);
             console.log("container", container.classList);
-            container.classList.remove("cky-hide");
-            container.style.visibility = "visible";
+            container.classList.add("cky-hide");
+            // container.style.visibility = "visible";
           }
           //   });
         });
