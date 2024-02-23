@@ -21,11 +21,6 @@
       window.addEventListener("load", function () {
         waitForElement(".cky-consent-container", function () {
           let regionCode = window.cookieyes._ckyStore._ruleData._regionCode;
-          // fetch("https://directory.cookieyes.com/api/v1/ip")
-          //   .then((res) => res.json())
-          //   .then((data) => {
-          //     regionCode = data.region_code;
-          //     console.log("regionCode", regionCode);
           console.log(regionCode);
           if (regionCode !== "CA") {
             const container = document.querySelector(".cky-consent-container");
