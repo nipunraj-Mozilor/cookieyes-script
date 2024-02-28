@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="arj_bs">
   <head>
-    <!-- Start cookieyes banner -->
-    <!-- <script
-      id="cookieyes"
-      type="text/javascript"
-      src="https://cdn-cookieyes.com/client_data/9509006eeaaa180966868be7/script.js"
-    ></script> -->
-    <!-- End cookieyes banner -->
-    <!-- Start cookieyes banner -->
-    <script
-      id="cookieyes"
-      type="text/javascript"
-      src="https://cdn-cookieyes.com/client_data/b81484bb0a9c1205097850de/script.js"
-    ></script>
-    <!-- End cookieyes banner -->
     <!-- custom script -->
     <script>
       var checktimeout = 0;
@@ -39,13 +25,28 @@
         }
       }
     </script>
-    <!-- custom script -->
-    <!-- dummy script -->
-    <script src="dummy.com" data-cookieyes="cookieyes-analytics">
-      fummy
-    </script>
-    <!-- dummy script ends -->
+    <!-- custom script GCM -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+        wait_for_update: 2000,
+      });
+
+      gtag("set", "ads_data_redaction", true);
+      gtag("set", "url_passthrough", true);
+    </script>
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -71,6 +72,13 @@
 
       gtag("config", "G-W5JKKJHZDH");
     </script>
+    <!-- Start cookieyes banner -->
+    <script
+      id="cookieyes"
+      type="text/javascript"
+      src="https://cdn-cookieyes.com/client_data/55f1f3be99dd1bc57d3ac597/script.js"
+    ></script>
+    <!-- End cookieyes banner -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
