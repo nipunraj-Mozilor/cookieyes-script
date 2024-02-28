@@ -1,31 +1,6 @@
 <!DOCTYPE html>
 <html lang="arj_bs">
   <head>
-    <!-- custom script -->
-    <script>
-      var checktimeout = 0;
-      window.addEventListener("load", function () {
-        waitForElement(".cky-consent-container", function () {
-          let regionCode = window.cookieyes._ckyStore._ruleData._regionCode;
-          if (regionCode !== "CA") {
-            const container = document.querySelector(".cky-consent-container");
-            container.style.visibility = "hidden";
-          }
-        });
-      });
-
-      function waitForElement(selector, callback) {
-        const element = document.querySelector(selector);
-        if (element) return callback();
-        checktimeout++;
-        if (checktimeout < 120) {
-          setTimeout(function () {
-            waitForElement(selector, callback);
-          }, 100);
-        }
-      }
-    </script>
-    <!-- custom script GCM -->
     <script>
       window.dataLayer = window.dataLayer || [];
 
