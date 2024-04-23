@@ -26,6 +26,7 @@
           const [key, value] = pair.split(":");
           cookieObj[key] = value;
         });
+        console.log("outside");
         if (cookieObj.functional === "yes") {
           console.log("here");
           functionalConsent = true;
