@@ -18,6 +18,7 @@
       const cookieYesConsent = cookies["cookieyes-consent"];
       let functionalConsent = false;
       if (cookieYesConsent) {
+        console.log("in first if");
         const cookiePairs = cookieYesConsent
           .split(",")
           .map((pair) => pair.trim());
