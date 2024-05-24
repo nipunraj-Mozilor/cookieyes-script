@@ -1,57 +1,7 @@
 <!DOCTYPE html>
 <html lang="arj_bs">
   <head>
-    <!-- Start cookieyes banner -->
-    <script
-      id="cookieyes"
-      type="text/javascript"
-      src="https://cdn-cookieyes.com/client_data/55f1f3be99dd1bc57d3ac597/script.js"
-    ></script>
     <script>
-      let cookies = document.cookie
-        .split(";")
-        .reduce(
-          (ac, cv, i) =>
-            Object.assign(ac, { [cv.split("=")[0]]: cv.split("=")[1] }),
-          {}
-        );
-      const cookieYesConsent = cookies["cookieyes-consent"];
-      let functionalConsent = false;
-      if (cookieYesConsent) {
-        console.log("in first");
-        const cookiePairs = cookieYesConsent
-          .split(",")
-          .map((pair) => pair.trim());
-        const cookieObj = {};
-        cookiePairs.forEach((pair) => {
-          const [key, value] = pair.split(":");
-          cookieObj[key] = value;
-        });
-        console.log("outside");
-        if (cookieObj.functional === "yes") {
-          console.log("here");
-          functionalConsent = true;
-        }
-      }
-      if (functionalConsent) {
-        addScript();
-      } else {
-        document.addEventListener(
-          "cookieyes_consent_update",
-          function (eventData) {
-            const data = eventData.detail;
-            if (data.accepted.includes("functional")) {
-              addScript();
-            }
-          }
-        );
-      }
-      function addScript() {
-        console.log("nipun raj");
-      }
-    </script>
-    <!-- End cookieyes banner -->
-    <!-- <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -70,8 +20,9 @@
 
       gtag("set", "ads_data_redaction", true);
       gtag("set", "url_passthrough", true);
-    </script> -->
-    <!-- Google Tag Manager -->
+    </script>
+
+    <!-- Google Tag Manager --->
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
@@ -84,7 +35,7 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-NNP5WJ6");
     </script>
-    -->
+
     <!-- End Google Tag Manager -->
     <!-- Google analytics -->
     <!-- <script>
@@ -96,6 +47,13 @@
 
       gtag("config", "G-W5JKKJHZDH");
     </script> -->
+    <!-- Start cookieyes banner -->
+    <script
+      id="cookieyes"
+      type="text/javascript"
+      src="https://cdn-cookieyes.com/client_data/7e8c5bb78da00c1184200314/script.js"
+    ></script>
+    <!-- End cookieyes banner -->
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
