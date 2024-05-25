@@ -2,24 +2,41 @@
 <html lang="arj_bs">
   <head>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+      function getCookieValue(name) {
+        const cookies = document.cookie.split(";").reduce((acc, curr) => {
+          const [key, value] = curr.split("=").map((part) => part.trim());
+          acc[key] = value;
+          return acc;
+        }, {});
+
+        return cookies[name] || null;
       }
 
-      gtag("consent", "default", {
-        ad_storage: "denied",
-        ad_user_data: "denied",
-        ad_personalization: "denied",
-        analytics_storage: "denied",
-        functionality_storage: "denied",
-        personalization_storage: "denied",
-        security_storage: "granted",
-        wait_for_update: 2000,
-      });
+      const consentString = getCookieValue("cookieyes-consent");
+      if (consentString && typeof consentString === "string") {
+        const cookieObj = consentString.split(",").reduce(function (acc, curr) {
+          const cookieValue = curr.trim().split(":");
+          acc[cookieValue[0]] = getConsentStateForCategory(cookieValue[1]);
+          return acc;
+        }, {});
 
-      gtag("set", "ads_data_redaction", true);
-      gtag("set", "url_passthrough", true);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("consent", "default", {
+          ad_storage: cookieObj.advertisement ? "granted" : "denied",
+          ad_user_data: cookieObj.advertisement ? "granted" : "denied",
+          ad_personalization: cookieObj.advertisement ? "granted" : "denied",
+          analytics_storage: cookieObj.analytics ? "granted" : "denied",
+          functionality_storage: cookieObj.functional ? "granted" : "denied",
+          personalization_storage: cookieObj.functional ? "granted" : "denied",
+          security_storage: "granted",
+          wait_for_update: 2000,
+        });
+        gtag("set", "ads_data_redaction", true);
+        gtag("set", "url_passthrough", true);
+      }
     </script>
 
     <!-- Google Tag Manager --->
