@@ -11,6 +11,9 @@
 
         return cookies[name] || null;
       }
+      function getConsentStateForCategory(categoryConsent) {
+        return categoryConsent === "yes" ? "granted" : "denied";
+      }
 
       const consentString = getCookieValue("cookieyes-consent");
       if (consentString && typeof consentString === "string") {
@@ -24,14 +27,15 @@
         function gtag() {
           dataLayer.push(arguments);
         }
+        console;
         gtag("consent", "default", {
-          ad_storage: cookieObj.advertisement ? "granted" : "denied",
-          ad_user_data: cookieObj.advertisement ? "granted" : "denied",
-          ad_personalization: cookieObj.advertisement ? "granted" : "denied",
-          analytics_storage: cookieObj.analytics ? "granted" : "denied",
-          functionality_storage: cookieObj.functional ? "granted" : "denied",
-          personalization_storage: cookieObj.functional ? "granted" : "denied",
-          security_storage: "granted",
+          ad_storage: cookieObj.advertisement,
+          ad_user_data: cookieObj.advertisement,
+          ad_personalization: cookieObj.advertisement,
+          analytics_storage: cookieObj.analytics,
+          functionality_storage: cookieObj.functional,
+          personalization_storage: cookieObj.functional,
+          security_storage: cookieObj.necessary,
           wait_for_update: 2000,
         });
         gtag("set", "ads_data_redaction", true);
